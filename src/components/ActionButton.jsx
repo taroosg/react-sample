@@ -1,4 +1,4 @@
-export const OmikujiButton = () => {
+export const ActionButton = () => {
   return (
     <button type="button">おみくじをひく</button>
   )

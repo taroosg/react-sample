@@ -1,10 +1,10 @@
-import { OmikujiButton } from "./components/OmikujiButton";
+import { ActionButton } from "./components/ActionButton";
 
 const App = () => {
   return (
     <>
       <h1>react app</h1>
-      <OmikujiButton />
+      <ActionButton />
     </>
   );
 };
