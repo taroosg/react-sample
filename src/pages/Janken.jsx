@@ -47,7 +47,19 @@ export const Janken = () => {
       <p>自分の手：{jankenResult.myHand}</p>
       <p>相手の手：{jankenResult.comHand}</p>
       <p>結果：{jankenResult.result}</p>
-      <p>{JSON.stringify(history)}</p>
+      <p>履歴</p>
+      <table>
+        <thead>
+          <tr>
+            <th>自分の手</th>
+            <th>相手の手</th>
+            <th>結果</th>
+          </tr>
+        </thead>
+        <tbody>
+          {history.map((x, i) => <tr key={i}><td>{x.myHand}</td><td>{x.comHand}</td><td>{x.result}</td></tr>)}
+        </tbody>
+      </table>
     </>
   )
 }
