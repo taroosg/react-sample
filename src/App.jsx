@@ -4,7 +4,7 @@ import { Janken } from "./pages/Janken";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <h1>react app</h1>
       <ul>
         <li>
