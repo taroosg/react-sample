@@ -1,5 +1,5 @@
-export const ActionButton = ({ text }) => {
+export const ActionButton = ({ text, action }) => {
   return (
-    <button type="button">{text}</button>
+    <button type="button" onClick={action}>{text}</button>
   )
 }
