@@ -4,7 +4,12 @@ const App = () => {
   return (
     <>
       <h1>react app</h1>
-      <ActionButton />
+      <ActionButton
+        text="おみくじをひく"
+      />
+      <ActionButton
+        text="じゃんけんをする"
+      />
     </>
   );
 };
