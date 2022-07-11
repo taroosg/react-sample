@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { HashRouter, Routes, Route, Link } from "react-router-dom";
 import { Omikuji } from "./pages/Omikuji";
 import { Janken } from "./pages/Janken";
 
 const App = () => {
   return (
-    <BrowserRouter basename="/">
+    <HashRouter basename="/">
       <h1>react app</h1>
       <ul>
         <li>
@@ -19,7 +19,7 @@ const App = () => {
         <Route path="/omikuji" element={<Omikuji />} />
         <Route path="/janken" element={<Janken />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 export default App;
