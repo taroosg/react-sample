@@ -5,6 +5,8 @@ export const Janken = () => {
 
   const [jankenResult, setJankenResult] = useState({ myHand: '入力待ち', comHand: '待機中', 'result': '未対戦' });
 
+  const [history, setHistory] = useState([]);
+
   const getJankenResult = (myHand) => {
     const hand = ["グー", "チョキ", "パー"];
     const myIndex = hand.indexOf(myHand);
@@ -24,6 +26,7 @@ export const Janken = () => {
   const getJanken = (myHand) => {
     const result = getJankenResult(myHand);
     setJankenResult(result);
+    setHistory([result, ...history]);
   }
 
   return (
@@ -44,6 +47,7 @@ export const Janken = () => {
       <p>自分の手：{jankenResult.myHand}</p>
       <p>相手の手：{jankenResult.comHand}</p>
       <p>結果：{jankenResult.result}</p>
+      <p>{JSON.stringify(history)}</p>
     </>
   )
 }
