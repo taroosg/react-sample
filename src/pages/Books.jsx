@@ -5,7 +5,7 @@ import weatherJson from '../static/weather.json';
 export const Books = () => {
 
   const [books, setBooks] = useState([]);
-  const [selectedBook, setSelectedBook] = useState(null);
+  const [book, setBook] = useState(null);
   const [geoLocation, setGeoLocation] = useState(null);
   const [place, setPlace] = useState(null);
   const [weather, setWeather] = useState(null);
@@ -18,7 +18,7 @@ export const Books = () => {
   };
 
   const selectBook = (book) => {
-    setSelectedBook({
+    setBook({
       title: book.volumeInfo.title,
       url: book.volumeInfo.infoLink,
     });
@@ -56,8 +56,8 @@ export const Books = () => {
         </thead>
         <tbody>
           <tr>
-            <td>{selectedBook?.title}</td>
-            <td>{selectedBook?.url ? <a href={selectedBook.url} target="_blank" rel="noreferrer">Link</a> : ''}</td>
+            <td>{book?.title}</td>
+            <td>{book?.url ? <a href={book.url} target="_blank" rel="noreferrer">Link</a> : ''}</td>
           </tr>
         </tbody>
       </table>

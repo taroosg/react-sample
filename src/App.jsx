@@ -15,7 +15,7 @@ const App = () => {
           <Link to="/janken">じゃんけん</Link>
         </li>
         <li>
-          <Link to="/books">本</Link>
+          <Link to="/books">投稿する</Link>
         </li>
       </ul>
       <hr />
