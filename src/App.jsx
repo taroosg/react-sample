@@ -1,6 +1,7 @@
 import { HashRouter, Routes, Route, Link } from "react-router-dom";
 import { Omikuji } from "./pages/Omikuji";
 import { Janken } from "./pages/Janken";
+import { Books } from "./pages/Books";
 
 const App = () => {
   return (
@@ -13,11 +14,15 @@ const App = () => {
         <li>
           <Link to="/janken">じゃんけん</Link>
         </li>
+        <li>
+          <Link to="/books">本</Link>
+        </li>
       </ul>
       <hr />
       <Routes>
         <Route path="/omikuji" element={<Omikuji />} />
         <Route path="/janken" element={<Janken />} />
+        <Route path="/books" element={<Books />} />
       </Routes>
     </HashRouter>
   );
