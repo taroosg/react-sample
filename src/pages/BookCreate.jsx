@@ -21,10 +21,6 @@ export const BookCreate = () => {
   const [loading, setLoading] = useState(true);
 
   const [books, setBooks] = useState([]);
-  const [book, setBook] = useState("");
-  const [geoLocation, setGeoLocation] = useState(null);
-  const [place, setPlace] = useState("");
-  const [weather, setWeather] = useState("");
 
   const getBooks = async (keyword) => {
     const url = "https://www.googleapis.com/books/v1/volumes?q=intitle:";
@@ -33,22 +29,18 @@ export const BookCreate = () => {
   };
 
   const selectBook = (book) => {
-    setBook(book.volumeInfo.title);
     setValue("book", book.volumeInfo.title);
   };
 
   const success = async (position) => {
     const { latitude, longitude } = position.coords;
-    setGeoLocation({ latitude, longitude });
     const placeData = await axios.get(
       `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
     );
-    setPlace(placeData.data.display_name);
     setValue("place", placeData.data.display_name);
     const weatherData = await axios.get(
       `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=Asia%2FTokyo`
     );
-    setWeather(weatherJson[weatherData.data.daily.weathercode[0]]);
     setValue("weather", weatherJson[weatherData.data.daily.weathercode[0]]);
     setLoading(false);
   };

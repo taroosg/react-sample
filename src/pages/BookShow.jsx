@@ -18,7 +18,7 @@ export const BookShow = () => {
       setBook({ ...documentSnapshot.data(), id: documentSnapshot.id });
       setLoading(false);
     });
-  }, [])
+  }, [id])
 
   if (loading) { return <p>loading now...</p> }
 
