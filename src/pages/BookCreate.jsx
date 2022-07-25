@@ -16,6 +16,7 @@ export const BookCreate = () => {
     console.log(data);
     const result = await addDoc(collection(db, "books"), { ...data, timestamp: serverTimestamp() });
     console.log(result);
+    alert('投稿しました．一覧画面で確認できます．')
   };
 
   const [loading, setLoading] = useState(true);
